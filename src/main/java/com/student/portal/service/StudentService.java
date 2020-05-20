@@ -1,31 +1,17 @@
 package com.student.portal.service;
 
-import com.student.portal.dao.StudentDao;
 import com.student.portal.domain.Student;
 import com.student.portal.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
-@Component
-public class StudentService {
+@Service
+public interface StudentService {
 
-    @Autowired
-    StudentRepository studentRepository;
-
-    public List<Student> getStudentName(String year){
-
-        return studentRepository.findAllByCurrentYear(year);
-    }
-
-    public Student InsertStudent(String name, String surname, String studentNumber, String idNumber, String year) throws SQLException {
-
-//        StudentDao studentDao = new StudentDao();
-//        return studentDao.InsertStudent(name, surname, studentNumber, idNumber, year);
-        return null;
-    }
-
-    
+    List<Student> getStudents();
+    Optional<Student> getStudent(long id);
 }

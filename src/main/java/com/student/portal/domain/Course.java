@@ -1,8 +1,17 @@
 package com.student.portal.domain;
 
-import javax.persistence.*;
-import java.util.Date;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Getter
+@Setter
 @Entity
 @Table(name = "course")
 public class Course {
@@ -11,13 +20,13 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
-    @Column(name = "student_number")
+    @Column
     private String studentNumber;
 
-    @Column(name = "course_name")
+    @Column
     private String courseName;
 
-    @Column(name = "course_code")
+    @Column
     private String courseCode;
 
 

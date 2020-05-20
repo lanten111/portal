@@ -2,12 +2,10 @@ package com.student.portal;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-@Configuration
-@SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
+@EnableSwagger2
+@SpringBootApplication
 public class PortalApplication {
 
     public static void main(String[] args) {
@@ -15,5 +13,3 @@ public class PortalApplication {
     }
 
 }
-
-//
